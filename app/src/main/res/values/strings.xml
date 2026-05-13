@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">NammaMela</string>
+    <string name="tonight_play">Tonight\'s Play</string>
+    <string name="duration_format">Duration: %s</string>
+    <string name="tonight_cast">Tonight\'s Cast</string>
+    <string name="lead_actor">Lead Actor</string>
+    <string name="comedian">Comedian</string>
+    <string name="singer">Singer</string>
+    <string name="reserve_seat">Reserve a Seat</string>
+    <string name="fan_wall">Fan Wall 👏</string>
+    <string name="leave_applause">Leave applause...</string>
+    <string name="send">Send</string>
+    <string name="applause_sent">Applause sent! 👏</string>
+
+    <string name="select_seats">Select Your Seats 🎭</string>
+    <string name="selected_count">Selected: %1$d seats</string>
+    <string name="confirm_booking">Confirm Booking</string>
+    <string name="msg_select_seat_first">Please select a seat first!</string>
+    <string name="msg_reservation_success">Reservation Successful! 🎭</string>
+    <string name="desc_poster">Drama Poster</string>
+</resources>

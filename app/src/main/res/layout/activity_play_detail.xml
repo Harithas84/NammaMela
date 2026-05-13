@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0B0F">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="#1C1C24"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <ImageView
+                android:id="@+id/detailImgPoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_overlay" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_back" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/detailTxtPlayName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sathya Harishchandra"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detailTxtPlayDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Dec 10 | 6:00 PM"
+                android:textColor="@color/mela_gold"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detailTxtDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Duration: 3h 30m"
+                android:textColor="#CCCCCC"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="#33FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Theatrical Cast"
+                android:textColor="@color/mela_gold"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Lead -->
+                    <LinearLayout style="@style/CastItemLayout">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/detailImgLead"
+                            style="@style/CastImageStyle" />
+                        <TextView
+                            android:id="@+id/detailTxtLeadName"
+                            style="@style/CastNameStyle"
+                            android:text="Lead Actor" />
+                    </LinearLayout>
+
+                    <!-- Comedian -->
+                    <LinearLayout style="@style/CastItemLayout">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/detailImgComedian"
+                            style="@style/CastImageStyle" />
+                        <TextView
+                            android:id="@+id/detailTxtComedianName"
+                            style="@style/CastNameStyle"
+                            android:text="Comedian" />
+                    </LinearLayout>
+
+                    <!-- Singer -->
+                    <LinearLayout style="@style/CastItemLayout">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/detailImgSinger"
+                            style="@style/CastImageStyle" />
+                        <TextView
+                            android:id="@+id/detailTxtSingerName"
+                            style="@style/CastNameStyle"
+                            android:text="Singer" />
+                    </LinearLayout>
+
+                    <!-- Supporting -->
+                    <LinearLayout style="@style/CastItemLayout">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/detailImgSupporting"
+                            style="@style/CastImageStyle" />
+                        <TextView
+                            android:id="@+id/detailTxtSupportingName"
+                            style="@style/CastNameStyle"
+                            android:text="Villain" />
+                    </LinearLayout>
+
+                    <!-- Dancer -->
+                    <LinearLayout style="@style/CastItemLayout">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/detailImgDancer"
+                            style="@style/CastImageStyle" />
+                        <TextView
+                            android:id="@+id/detailTxtDancerName"
+                            style="@style/CastNameStyle"
+                            android:text="Dancer" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="About the Play"
+                android:textColor="@color/mela_gold"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detailTxtAbout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="4dp"
+                android:text="Experience the legendary story of truth and sacrifice. A masterpiece of Indian rural theater, bringing to life the epic trials of King Harishchandra."
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/detailBtnBook"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:text="BOOK TICKETS"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/mela_gold"
+        app:cornerRadius="12dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

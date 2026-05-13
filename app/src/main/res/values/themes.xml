@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.NammaMela" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/mela_gold</item>
+        <item name="colorOnPrimary">@color/mela_black</item>
+        <item name="colorPrimaryContainer">@color/mela_card_bg</item>
+        <item name="colorOnPrimaryContainer">@color/mela_gold</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/mela_red</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/mela_black</item>
+
+        <!-- Background colors -->
+        <item name="android:windowBackground">@color/mela_black</item>
+    </style>
+
+    <style name="CastItemLayout">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <style name="CastImageStyle">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.Corner.Full</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="CastNameStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+</resources>

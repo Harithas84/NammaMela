@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0B0F">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Purchased Tickets Section -->
+        <TextView
+            android:id="@+id/tvBookingHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Purchased Tickets 🎟️"
+            android:textColor="#C19A3E"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBookings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="24dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Play 🎭"
+            android:textColor="#C19A3E"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPlays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Drama Poster -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="12dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/imgPoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/desc_poster" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_overlay" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtPlayName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tonight_play"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtPlayDateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date | Time"
+                    android:textColor="#C19A3E"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duration: 3 Hours"
+                    android:textColor="#BBBBBB"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tonight's Cast -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tonight_cast"
+            android:textColor="#C19A3E"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/castContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <LinearLayout style="@style/CastItemLayout">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgLead"
+                        style="@style/CastImageStyle" />
+                    <TextView
+                        android:id="@+id/txtLeadName"
+                        style="@style/CastNameStyle"
+                        android:text="@string/lead_actor" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/CastItemLayout">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgComedian"
+                        style="@style/CastImageStyle" />
+                    <TextView
+                        android:id="@+id/txtComedianName"
+                        style="@style/CastNameStyle"
+                        android:text="@string/comedian" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/CastItemLayout">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgSinger"
+                        style="@style/CastImageStyle" />
+                    <TextView
+                        android:id="@+id/txtSingerName"
+                        style="@style/CastNameStyle"
+                        android:text="@string/singer" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/CastItemLayout">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgSupporting"
+                        style="@style/CastImageStyle" />
+                    <TextView
+                        android:id="@+id/txtSupportingName"
+                        style="@style/CastNameStyle"
+                        android:text="Villain" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/CastItemLayout">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgDancer"
+                        style="@style/CastImageStyle" />
+                    <TextView
+                        android:id="@+id/txtDancerName"
+                        style="@style/CastNameStyle"
+                        android:text="Dancer" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/btnBook"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#C19A3E"
+            android:text="@string/reserve_seat"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
+
+        <!-- Fan Wall -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/fan_wall"
+            android:textColor="#C19A3E"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+            <EditText
+                android:id="@+id/etComment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/leave_applause"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888"
+                android:backgroundTint="#C19A3E"
+                android:padding="12dp"
+                android:autofillHints="none"
+                android:inputType="textCapSentences" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/send"
+                android:backgroundTint="#C19A3E"
+                android:textColor="#000000"
+                android:layout_marginStart="8dp"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvComments"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:clipToPadding="false"
+            android:paddingBottom="20dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
